@@ -1,9 +1,9 @@
 //============================================================================
 // Name        : Pointers.cpp
-// Author      : Examples
+// Author      : Wei-Yu Liao
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Description : Pointers
 //============================================================================
 
 #include <iostream>
