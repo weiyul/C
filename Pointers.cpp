@@ -36,8 +36,8 @@ int main() {
 	//usesAddressOfEachElementInArray();
 	//displayArrayContentsWithPointer();
 	displayArrayContentsWithPointer();
-   //pointersAsFunctionParameters();
-    return 0;
+        //pointersAsFunctionParameters();
+        return 0;
 }
 
 void showAddress(){
