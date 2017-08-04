@@ -23,6 +23,9 @@ void displayArrayContentsWithPointer2();
 void getNumber(int *);
 void doubleValue(int *);
 void pointersAsFunctionParameters();
+void getSales(float *);
+float totalSales(float *);
+void pointersAsParameterToAcceptAddressOfArray();
 
 int main() {
 		//showAddress();
@@ -33,8 +36,10 @@ int main() {
 		//subscriptNotationWithPointerAndPointerNotationWithArrayName();
 		//usesAddressOfEachElementInArray();
 		//displayArrayContentsWithPointer();
-		displayArrayContentsWithPointer();
+		//displayArrayContentsWithPointer();
 		//pointersAsFunctionParameters();
+		pointersAsParameterToAcceptAddressOfArray();
+
 		return 0;
 }
 
@@ -180,3 +185,33 @@ void getNumber(int *input){
 void doubleValue(int *val){
 		*val *=2;
 }
+
+// Definition of getSales. This function uses a pointer to accept the address of an array of four floats.
+void getSales(float* array){
+		for(int count=0; count<4; count++){
+			cout<< "Enter the sales figure for quarter";
+			cout<< (count+ 1) <<": ";
+			cin>> array[count];//even though array is a pointer, subscript notation is used
+		}
+}
+
+float totalSales(float* array){
+		float sum= 0.0;
+		for(int count=0; count<4; count++){
+			/*sum += *array;//use the indirection operator
+			array++;//array is incremented to point to the next element*/
+			sum += *array++;//equal to the above two lines. The * operator will first dereference array, then the ++ operator will increment the address in array.
+		}
+		return sum;
+}
+
+void pointersAsParameterToAcceptAddressOfArray(){
+		float sales[4];
+		getSales(sales);
+		cout.precision(2);
+		cout.setf(ios::fixed|ios::showpoint);
+		cout<<"The total sales for the year are $";
+		cout<< totalSales(sales)<< endl;
+}
+
+
